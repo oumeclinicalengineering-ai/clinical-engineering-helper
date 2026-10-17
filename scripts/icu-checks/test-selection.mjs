@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {defaults,sample,classification} from '../../public/intensive-care/workflow.mjs';
+import {classificationOptions,activeFields,selectedData} from '../../public/intensive-care/selection.mjs';
+assert.equal(classificationOptions.length,4);
+const scai=selectedData(sample,['scai']);
+assert.equal(scai.map,72);assert.equal(scai.ci,'');assert.equal(scai.spo2,'');assert.equal(scai.ecmoFlow,'');assert.equal(scai.ecmo,true);
+const f=selectedData(sample,['forrester']);assert.equal(f.ci,1.8);assert.equal(f.lactate,'');assert.equal(classification(f).forrester,null);
+assert.equal(classification({...f,hemoValid:true,pawpValid:true}).forrester.group,'IV');
+assert.equal([...activeFields(['scai','nohria'])].filter(k=>k==='cold').length,1);
+const removed=selectedData({...sample,hemoValid:true,pawpValid:true},['nohria']);assert.equal(removed.ci,'');assert.equal(removed.hemoValid,false);assert.equal(removed.cold,'yes');assert.equal(removed.wet,'yes');assert.equal(classification(removed).forrester,null);
+console.log('Passed: active field sharing, sample data pruning, deselection clears unrelated measurements and measurement gates.');
