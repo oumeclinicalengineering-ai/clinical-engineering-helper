@@ -9,7 +9,8 @@
     "preview": "vite preview --host 0.0.0.0",
     "test": "vitest run src",
     "test:e2e": "playwright test",
-    "export:pages": "npm run build && node scripts/export-pages.mjs"
+    "export:pages": "npm run build && node scripts/export-pages.mjs",
+    "test:icu": "node scripts/icu-checks/test-engine.mjs && node scripts/icu-checks/test-render.mjs && node scripts/icu-checks/test-selection.mjs && node scripts/icu-checks/test-guides.mjs && node scripts/icu-checks/test-figures.mjs"
   },
   "dependencies": {
     "react": "^19.2.0",
