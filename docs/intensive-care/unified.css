@@ -1,0 +1,66 @@
+
+/* Layout only: classification logic and educational content are unchanged. */
+:root{--bg:#f3f7f7;--paper:#fff;--green:#176a6c;--soft:#edf6f1}
+body{font-size:16px;line-height:1.75}
+.single-app{min-height:100vh;background:var(--bg)}
+.single-main{max-width:none;margin:0;padding:0;display:block;grid-column:auto}
+.single-heading{display:block}
+.single-heading h2{font-size:22px;line-height:1.5;margin:0 0 16px}
+.single-heading p{font-size:15px;color:var(--muted);margin:12px 0}
+.single-heading .button{margin-top:8px}
+.single-content{display:block}
+.input-column,.results-column{width:100%;min-width:0}
+.results-panel{position:static;padding:0;border:0;background:transparent;box-shadow:none}
+.column-heading{margin-bottom:24px;gap:12px;align-items:flex-start}
+.column-heading h2{font-size:22px;line-height:1.5}
+.column-heading p{font-size:14px;color:var(--muted)}
+.column-number{font-size:16px;background:#edf6f1;color:var(--accent)}
+.classification-choices{gap:12px}
+.choice-card{padding:16px;font-size:15px}
+.choice-card strong{font-size:16px;color:var(--ink)}
+.choice-card small{font-size:13px;line-height:1.8;color:var(--muted)}
+.field-grid,.monitor-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 24px}
+.field label{font-size:15px;font-weight:700;color:var(--ink)}
+.field small,.section-foot,.input-section>summary small{font-size:13px;color:var(--muted);line-height:1.8}
+.field select{font-size:17px}
+.number-input{border-color:#b7cbce;background:white;border-radius:8px}
+.number-input input{margin:0;min-height:52px}
+.number-input span{font-size:14px;color:var(--muted)}
+.input-section>summary strong{font-size:18px;color:var(--ink)}
+.input-section>summary{padding:18px}
+.section-content{padding:0 18px 18px}
+.classification-card{margin:20px 0;padding:20px;border-radius:12px}
+.classification-card p,.result-note,.classification-card .class-detail{font-size:14px;line-height:1.8;color:var(--muted)}
+.class-state{font-size:24px}
+.badge{font-size:12px}
+.button,.single-shortcuts button{font-size:16px;min-height:48px;border-radius:8px;padding:11px 18px;white-space:normal}
+.single-shortcuts{margin:20px 0;gap:12px;flex-wrap:wrap}
+.glossary{padding:16px 20px;background:white;border:1px solid var(--line);border-radius:14px}
+.glossary summary{font-size:15px;color:var(--accent)}
+.glossary p,.glossary dd,.glossary dt{font-size:14px}
+.helper-header .brandmark{flex:0 0 44px}
+.me-guide .guide-bubble p{font-size:15px}
+footer{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+footer button{font-size:14px}
+@media(max-width:640px){
+ .single-main{padding:0}.single-heading{padding:22px 18px}
+ .single-heading h2,.column-heading h2{font-size:21px}
+ .field-grid,.monitor-grid{grid-template-columns:1fr;gap:0}
+ .single-shortcuts{display:flex}.single-shortcuts button{flex:1}
+ .input-column,.results-column{padding:22px 18px}
+ .classification-card{padding:16px}
+ .input-section>summary{padding:14px 12px}
+ .section-content{padding:0 12px 14px}
+ .classification-choices{grid-template-columns:1fr}
+ .me-guide .guide-bubble p{font-size:14px}
+}
+
+.input-column .step-actions,.single-shortcuts{position:static;box-shadow:none;backdrop-filter:none}
+.input-column .step-actions{padding:0;border:0;background:transparent;margin-top:24px;flex-wrap:wrap}
+.input-column .classification-choice b{font-size:15px;line-height:1.8;color:var(--ink)}
+.input-column .classification-choice small{font-size:13px;line-height:1.8;color:var(--muted)}
+.input-column .field label{font-size:15px;color:var(--ink)}
+.input-column .field small{font-size:13px;color:var(--muted)}
+.input-column .classification-choice.selected{background:#edf6f1}
+.input-column .classification-choice input{accent-color:var(--accent)}
+@media(max-width:640px){.input-column .step-actions button{width:100%}.input-column .classification-choices{grid-template-columns:1fr}}
